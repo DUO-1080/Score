@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Score</string>
+    <string name="team_name_a">Team A</string>
+    <string name="team_name_b">Team B</string>
+    <string name="default_score">0</string>
+    <string name="btn_plus_1">+1</string>
+    <string name="btn_plus_2">+2</string>
+    <string name="btn_plus_3">+3</string>
+    <string name="btn_undo">Undo operation</string>
+    <string name="btn_new">new game</string>
 </resources>
