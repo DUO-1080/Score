@@ -74,7 +74,11 @@ public class ScoreViewModel extends ViewModel {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
 
-
+    public void newGame() {
+        scoreA.setValue(0);
+        scoreB.setValue(0);
+        history.clear();
     }
 }

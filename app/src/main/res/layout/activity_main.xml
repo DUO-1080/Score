@@ -100,7 +100,7 @@
             android:text="@{String.valueOf(data.scoreA)}"
             android:textAlignment="center"
             android:textColor="@color/team1color"
-            android:textSize="70sp"
+            android:textSize="@dimen/score_text_size"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/guideline4"
             app:layout_constraintEnd_toStartOf="@+id/guideline"
@@ -114,7 +114,7 @@
             android:layout_height="wrap_content"
             android:text="@{String.valueOf(data.scoreB)}"
             android:textColor="@color/team2color"
-            android:textSize="70sp"
+            android:textSize="@dimen/score_text_size"
             app:layout_constraintBottom_toTopOf="@+id/guideline4"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -123,11 +123,11 @@
 
         <Button
             android:id="@+id/btn_a_1"
+            style="@style/btn_a"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
-            android:background="@color/team1color"
             android:onClick="@{(view) -> data.record(view)}"
             android:text="@string/btn_plus_1"
             android:textSize="30sp"
@@ -138,11 +138,11 @@
 
         <Button
             android:id="@+id/btn_a_2"
+            style="@style/btn_a"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
-            android:background="@color/team1color"
             android:onClick="@{(view) -> data.record(view)}"
             android:text="@string/btn_plus_2"
             android:textSize="30sp"
@@ -153,11 +153,11 @@
 
         <Button
             android:id="@+id/btn_a_3"
+            style="@style/btn_a"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
-            android:background="@color/team1color"
             android:onClick="@{(view) -> data.record(view)}"
             android:text="@string/btn_plus_3"
             android:textSize="30sp"
@@ -168,11 +168,11 @@
 
         <Button
             android:id="@+id/btn_b_1"
+            style="@style/btn_b"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
-            android:background="@color/team2color"
             android:onClick="@{(view) -> data.record(view)}"
             android:text="@string/btn_plus_1"
             android:textSize="30sp"
@@ -183,11 +183,11 @@
 
         <Button
             android:id="@+id/btn_b_2"
+            style="@style/btn_b"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
-            android:background="@color/team2color"
             android:onClick="@{(view) -> data.record(view)}"
             android:text="@string/btn_plus_2"
             android:textSize="30sp"
@@ -199,11 +199,11 @@
 
         <Button
             android:id="@+id/btn_b_3"
+            style="@style/btn_b"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
-            android:background="@color/team2color"
             android:onClick="@{(view) -> data.record(view)}"
             android:text="@string/btn_plus_3"
             android:textSize="30sp"
@@ -214,10 +214,10 @@
 
         <ImageButton
             android:id="@+id/btn_undo"
-            android:layout_width="48dp"
+            android:layout_width="64dp"
             android:layout_height="48dp"
-            android:onClick="@{()-> data.undo()}"
             android:contentDescription="@string/btn_undo"
+            android:onClick="@{()-> data.undo()}"
             app:layout_constraintBottom_toTopOf="@+id/guideline6"
             app:layout_constraintEnd_toStartOf="@+id/guideline"
             app:layout_constraintStart_toStartOf="@+id/guideline"
@@ -226,15 +226,16 @@
 
         <ImageButton
             android:id="@+id/btn_new_game"
-            android:layout_width="48dp"
+            android:layout_width="64dp"
             android:layout_height="48dp"
             android:layout_marginEnd="28dp"
             android:contentDescription="@string/btn_new"
+            android:onClick="@{() -> data.newGame()}"
             app:layout_constraintBottom_toTopOf="@+id/guideline6"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toTopOf="@+id/guideline6"
-            app:srcCompat="@drawable/ic_autorenew" />
+            app:srcCompat="@drawable/ic_new" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline9"

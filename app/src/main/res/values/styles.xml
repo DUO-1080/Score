@@ -8,4 +8,15 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="btn">
+        <item name="android:textSize">@dimen/btn_text_size</item>
+    </style>
+
+    <style name="btn_a" parent="btn">
+        <item name="android:background">@drawable/bg_a</item>
+    </style>
+
+    <style name="btn_b" parent="btn">
+        <item name="android:background">@drawable/bg_b</item>
+    </style>
 </resources>
