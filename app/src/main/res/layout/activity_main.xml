@@ -213,9 +213,10 @@
             app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
         <ImageButton
-            android:id="@+id/btn_pre"
+            android:id="@+id/btn_undo"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:onClick="@{()-> data.undo()}"
             android:contentDescription="@string/btn_undo"
             app:layout_constraintBottom_toTopOf="@+id/guideline6"
             app:layout_constraintEnd_toStartOf="@+id/guideline"

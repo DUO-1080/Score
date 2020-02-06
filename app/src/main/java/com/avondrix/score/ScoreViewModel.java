@@ -6,10 +6,15 @@ import android.view.View;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import java.util.ArrayDeque;
+import java.util.Arrays;
+
 public class ScoreViewModel extends ViewModel {
     private static final String TAG = "ScoreViewModel";
     private MutableLiveData<Integer> scoreA;
     private MutableLiveData<Integer> scoreB;
+    private ArrayDeque<Score> history = new ArrayDeque<>();
+
 
     public MutableLiveData<Integer> getScoreA() {
         if (scoreA == null) {
@@ -30,6 +35,7 @@ public class ScoreViewModel extends ViewModel {
     }
 
     public void record(View view) {
+        history.push(new Score(scoreA.getValue(), scoreB.getValue()));
 //        Button btn = (Button) view;
         switch (view.getId()) {
             case R.id.btn_a_1:
@@ -57,5 +63,18 @@ public class ScoreViewModel extends ViewModel {
                 Log.d(TAG, "record: b + 3");
                 break;
         }
+        System.out.println(history.size() + Arrays.toString(history.toArray()));
+    }
+
+    public void undo() {
+        try {
+            Score pop = history.pop();
+            scoreA.setValue(pop.getA());
+            scoreB.setValue(pop.getB());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
     }
 }
