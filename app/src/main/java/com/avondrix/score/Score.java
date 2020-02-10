@@ -1,6 +1,8 @@
 package com.avondrix.score;
 
-public class Score {
+import java.io.Serializable;
+
+public class Score implements Serializable {
     private int a;
     private int b;
 
