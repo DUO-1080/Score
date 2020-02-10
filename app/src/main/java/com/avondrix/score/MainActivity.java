@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.avondrix.score.databinding.ActivityMainBinding;
 
@@ -18,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
 //        setContentView(R.layout.activity_main);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        viewModel = ViewModelProviders.of(this).get(ScoreViewModel.class);
-
+//        viewModel = ViewModelProviders.of(this).get(ScoreViewModel.class);
+        viewModel = new ViewModelProvider(this).get(ScoreViewModel.class);
         binding.setData(viewModel);
         binding.setLifecycleOwner(this);
     }
